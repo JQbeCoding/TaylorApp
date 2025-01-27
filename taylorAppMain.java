@@ -21,6 +21,20 @@ public class taylorAppMain {
 			switch(input.toLowerCase()){
 				case "e":
 					System.out.println("WELCOME!!!");
+					System.out.println("Enter your pet type");
+					
+					//User enters the type of pet
+					String type = userInput.nextLine();
+					
+					System.out.println("Enter your pet's name");
+					
+					//User enters their pet name
+					String name = userInput.nextLine();
+					
+					Pet pet = new Pet(type, name);
+					//Displays pet type and name
+					System.out.println(pet.toString());
+					
 					return;
 				
 				case "q":
@@ -43,8 +57,6 @@ public class taylorAppMain {
 		System.out.println("******Welcome to the Taylor App!!*******");
 		System.out.println(" Press [E] To Enter  Press [Q] to Quit  ");
 	}
-	
-		
 }
 	
 
