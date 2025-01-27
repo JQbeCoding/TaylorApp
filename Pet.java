@@ -2,7 +2,7 @@ package taylorApp;
 
 public class Pet {
 	private String type;
-	
+	private String name;
 	
 	/**
 	 * Default for pet
@@ -15,8 +15,9 @@ public class Pet {
 	 * Type method for pet
 	 * @param type The pet type entered/chosen by the user
 	 */
-	public Pet(String type) {
+	public Pet(String type, String name) {
 		this.type = type;
+		this.name = name;
 	}
 	
 	/**
@@ -28,6 +29,14 @@ public class Pet {
 	}
 	
 	/**
+	 * Setter for the pet
+	 * @param type The type of pet entered/chosen by the user
+	 */
+	public void setPetName(String name) {
+		this.name = name;
+	}
+	
+	/**
 	 * Getter for pet type
 	 * @return The type of pet the user entered/chose
 	 */
@@ -35,15 +44,20 @@ public class Pet {
 		return type;
 	}
 	
+	/**
+	 * Getter for pet type
+	 * @return The type of pet the user entered/chose
+	 */
+	public String getPetName(){
+		return name;
+	}
+	
+	
 	@Override
 	/**
 	 * String method for pet type
 	 */
 	public String toString() {
-		return "Your pet is a " + type + "!";
+		return "Your pet is a " + type.toUpperCase() +  " named " + name.toUpperCase() + "!";
 	}
-	
-	
-	
-
 }
