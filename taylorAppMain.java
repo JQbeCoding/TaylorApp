@@ -21,7 +21,20 @@ public class taylorAppMain {
 			switch(input.toLowerCase()){
 				case "e":
 					System.out.println("WELCOME!!!");
-					choosePet();
+
+					Pet userPet = choosePet();
+					System.out.println();
+					
+					int points = getPoints();
+					System.out.println();
+					
+					if(points < 10) {
+					System.out.println(userPet.getPetName() + " has only earned " + points + 
+							" points :( Let's try to get that higher!!");
+					}
+					else {
+					System.out.println(userPet.getPetName() + " has earned " + points + " points!!");
+					}
 					return;
 				
 				case "q":
@@ -48,10 +61,10 @@ public class taylorAppMain {
 	/**
 	 * User selection for their preferred pet
 	 */
-	public static void choosePet() {
-		try (Scanner kbd = new Scanner(System.in)) {
+	public static Pet choosePet() {
+		Pet userPet = new Pet();
+		Scanner kbd = new Scanner(System.in);
 			
-			Pet userPet = new Pet();
 			//User chooses/enters the type of pet
 			System.out.println("Type a letter or enter the type of pet you want:");
 			System.out.println("[D]og");
@@ -89,6 +102,7 @@ public class taylorAppMain {
 				
 			default:
 				System.out.println("Invalid input. Please try again.");
+				input = kbd.nextLine();
 			}
 		}
 			
@@ -97,9 +111,39 @@ public class taylorAppMain {
 			String petName = kbd.nextLine();
 			userPet.setPetName(petName);
 			
-			;
 			//Displays pet type and name
 			System.out.println(userPet.toString());
+		return userPet;
+	}
+
+	/**
+	 * Calculates the amount of points the user earns
+	 * @return the amount of points the user earned
+	 */
+	public static int getPoints() {
+		boolean answered = false;
+		int points = 0;
+		try (Scanner kbd = new Scanner(System.in)) {
+			System.out.println("Did you eat today?");
+			System.out.println("[Y]es or [N]o");
+			
+			String input = kbd.nextLine();
+			
+			while(!answered) {
+			if(input.equalsIgnoreCase("y") ) {
+				points += 10;
+				answered = true;
+			}
+			else if(input.equalsIgnoreCase("n")) {
+				points -= 10;
+				answered = true;
+			}
+			else {
+				System.out.println("Please Enter Y or N:");
+				input = kbd.nextLine();
+			}
+			}
 		}	
+			return points;
 	}
 }
