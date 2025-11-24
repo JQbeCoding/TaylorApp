@@ -1,0 +1,25 @@
+{
+  "name": "taylorapp",
+  "version": "1.0.0",
+  "description": "Brought to you by **Soxiety Technology Solutions Research**, Ja'Quis Franklin, and Taylor Douglas. The Taylor app is a mental wellness app that lets users create task, schedules, and mood checks that feed a pet of the player's choosing within the game. This game will be open-source for community input and even improvements of the game along with full transparency of the research players will participate in.",
+  "homepage": "https://github.com/JQbeCoding/TaylorApp#readme",
+  "bugs": {
+    "url": "https://github.com/JQbeCoding/TaylorApp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JQbeCoding/TaylorApp.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "preview.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "tailwindcss": "^4.1.17"
+  }
+}
