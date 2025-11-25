@@ -6,6 +6,7 @@ import {
   SignUpButton,
   SignOutButton,
   useUser,
+  UserButton
 } from "@clerk/clerk-react";
 
 function App() {
@@ -50,9 +51,12 @@ function App() {
           </nav>
         </SignedOut>
         <SignedIn>
-          <div className="ml-auto mb-10 font-[MainFont]">
+          <div className="mb-10 font-[MainFont] flex justify-center gap-5">
+            <UserButton>
+              
+            </UserButton>
             <SignOutButton>
-              <button className="hover:bg-white! text-gray-200 hover:text-gray-400! ring-inset! ring-2! ring-black! rounded-md! bg-pink-500! dark:bg-[#ffd2ea]! border-4! border-white! shadow-sm! shadow-black uppercase dark:text-white hover:underline">
+              <button className="hover:bg-white! text-gray-200 hover:text-gray-400! ring-inset! ring-2! ring-black! rounded-md! bg-pink-500! dark:bg-[#ffd2ea]! border-4! border-white! shadow-sm! shadow-black uppercase dark:text-black hover:underline">
                 sign out
               </button>
             </SignOutButton>
