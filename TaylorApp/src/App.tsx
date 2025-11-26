@@ -8,6 +8,7 @@ import {
   useUser,
   UserButton,
 } from "@clerk/clerk-react";
+// import { DocumentEditor } from "@onlyoffice/document-editor-react";
 import AppLogo from "./assets/TaylorApp-Logo.png";
 import InfoImageOne from "./assets/RandomImage2.png";
 import InfoImageTwo from "./assets/Dog.png";
@@ -15,8 +16,21 @@ import Cat from "./assets/Cat.png";
 import Bunny from "./assets/Bunny.png";
 import Calendar from "./assets/TaylorApp-Calendar.png";
 
+
 function App() {
   const { user } = useUser();
+  // const onEditorReady = (_event: any) => {
+  //   console.log("Document is loaded");
+  //   const documentEditor = window.DocEditor.instances["docxEditor"];
+  //   if (documentEditor) {
+  //     documentEditor.showMessage(
+  //       `Welcome to ONLYOFFICE Editor, ${user?.username}!`
+  //     );
+  //     console.log(`ONLYOFFICE Editor instance ready for ${user?.username}`);
+  //   } else {
+  //     console.error("ONLYOFFICE Editor instance not found.");
+  //   }
+  // };
   return (
     <body className="dark:bg-black bg-[#e3e2e2]">
       <div
@@ -205,9 +219,29 @@ function App() {
         </main>
       </SignedOut>
       <SignedIn>
-        <h1 className="text-7xl text-black dark:text-white font-[SecondFont] uppercase">
-          HEY {user?.username}
-        </h1>
+        <div>
+          <h1 className="text-7xl text-black dark:text-white font-[SecondFont] uppercase">
+            HEY {user?.username}
+          </h1>
+        </div>
+        {/* <DocumentEditor
+          id="docxEditor"
+          documentServerUrl="http://localhost:3000/"
+          config={{
+            document: {
+              fileType: "docx",
+              key: "Khirz6zTPdfd7",
+              title: "Example Document Title.docx",
+              url: DOCUMENT_URL, 
+            },
+            documentType: "word",
+            editorConfig: {
+              callbackUrl: CALLBACK_URL, 
+            },
+          }}
+          events_onDocumentReady={onEditorReady}
+          onLoadComponentError={onLoadComponentError}
+        /> */}
       </SignedIn>
     </body>
   );
