@@ -15,9 +15,7 @@ import InfoImageTwo from "./assets/Dog.png";
 import Cat from "./assets/Cat.png";
 import Bunny from "./assets/Bunny.png";
 import Calendar from "./assets/TaylorApp-Calendar.png";
-import Beat from "./assets/Comforter (Instrumental Version).mp3"
-
-
+import Beat from "./assets/Lucena-(Taylor-App).mp3";
 
 function App() {
   const { user } = useUser();
@@ -57,9 +55,7 @@ function App() {
             </a>
           </div>
         </div>
-        <div>
-
-      </div>
+        <div></div>
         <SignedOut>
           <div className="flex ml-auto mt-15 p-3 gap-5 mr-10 collapse md:visible">
             <div>
@@ -88,7 +84,7 @@ function App() {
             </div>
           </div>
         </SignedOut>
-        
+
         <SignedIn>
           <div className="ml-auto mt-10 p-3 gap-5 mr-10 collapse md:visible">
             <div className="mt-10 mb-10 font-[MainFont] flex justify-center gap-5">
@@ -103,9 +99,9 @@ function App() {
         </SignedIn>
       </div>
       <SignedOut>
-      <audio controls autoPlay muted src={Beat} typeof="audio/mpeg">
-
-</audio>
+        <div id="music-player">
+          <audio controls autoPlay muted src={Beat} typeof="audio/mpeg"></audio>
+        </div>
         <nav className="mb-20" id="CTA">
           <div className="text-4xl mt-0 md:mt-15 text-black dark:text-white uppercase font-[SecondFont]">
             <p className="text-7xl font-[SoxietyFont]">
